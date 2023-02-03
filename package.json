@@ -1,0 +1,20 @@
+{
+  "name": "vidya",
+  "version": "0.0.1",
+  "description": "CLI for creating video games with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Justin L. Wells <justinleewells@icloud.com>",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "commander": "^10.0.0",
+    "inquirer": "^9.1.4",
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "prettier": "2.8.3"
+  }
+}
