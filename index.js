@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
 import { program } from 'commander'
 import { readFile } from 'fs/promises'
 
@@ -8,7 +10,8 @@ import create from './lib/create.js'
 import rename from './lib/rename.js'
 import sync from './lib/sync.js'
 
-const { version } = JSON.parse(await readFile('./package.json'))
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const { version } = JSON.parse(await readFile(__dirname + '/package.json'))
 
 program
   .name('vidya')
