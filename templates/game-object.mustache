@@ -1,0 +1,16 @@
+import Phaser from 'phaser'
+
+class {{className}} extends Phaser.GameObjects.GameObject {
+  constructor(scene) {
+    super(scene, '{{{name}}}')
+  }
+}
+
+function create{{className}} () {
+  const {{objectName}} = new {{className}}(this.scene)
+  this.displayList.add({{objectName}})
+  this.updateList.add({{objectName}})
+  return {{objectName}}
+}
+
+export { {{className}}, create{{className}} as factoryFn }

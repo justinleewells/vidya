@@ -1,0 +1,15 @@
+import { Plugins } from 'phaser'
+
+class {{pluginName}} extends Plugins.BasePlugin {
+  constructor(scene, pluginManager) {
+    super(scene, pluginManager)
+  }
+}
+
+const config = {
+  type: 'scene',
+  key: '{{pluginName}}',
+  mapping: '{{name}}',
+}
+
+export { {{pluginName}} as plugin, config }

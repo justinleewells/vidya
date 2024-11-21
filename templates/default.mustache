@@ -1,0 +1,14 @@
+import {{typeName}} from '../{{type}}'
+
+const data = Object.freeze({
+  id: {{id}},
+  name: '{{name}}',
+})
+
+class {{className}} extends {{typeName}} {
+  constructor() {
+    super(data)
+  }
+}
+
+export { data as default, {{className}} as Class }

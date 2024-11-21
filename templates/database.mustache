@@ -1,0 +1,20 @@
+{{#enum}}
+import {{enumName}} from '@enums/{{enumFile}}.js'
+
+{{/enum}}
+{{#data}}
+import {{className}} from './data/{{filename}}'
+{{/data}}
+
+export default Object.freeze({
+{{#enum}}
+{{#data}}
+  [{{enumName}}.{{key}}]: {{className}},
+{{/data}}
+{{/enum}}
+{{^enum}}
+{{#data}}
+  {{id}}: {{className}},
+{{/data}}
+{{/enum}}
+})

@@ -1,0 +1,15 @@
+import { Plugins } from 'phaser'
+
+class {{pluginName}} extends Plugins.BasePlugin {
+  constructor(pluginManager) {
+    super(pluginManager)
+  }
+}
+
+const config = {
+  type: 'global',
+  key: '{{pluginName}}',
+  mapping: '{{name}}',
+}
+
+export { {{pluginName}} as plugin, config }
