@@ -3,18 +3,18 @@ import {{enumName}} from '@enums/{{enumFile}}.js'
 
 {{/enum}}
 {{#data}}
-import {{className}} from './data/{{filename}}'
+import {{dataName}}Data from './data/{{filename}}'
 {{/data}}
 
 export default Object.freeze({
 {{#enum}}
 {{#data}}
-  [{{enumName}}.{{key}}]: {{className}},
+  [{{enumName}}.{{key}}]: {{dataName}}Data,
 {{/data}}
 {{/enum}}
 {{^enum}}
 {{#data}}
-  {{id}}: {{className}},
+  {{id}}: {{dataName}}Data,
 {{/data}}
 {{/enum}}
 })
