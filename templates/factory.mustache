@@ -1,0 +1,26 @@
+{{#enum}}
+import {{enumName}} from '@enums/{{enumFile}}.js'
+
+{{/enum}}
+{{#data}}
+import { Class as {{className}} } from './data/{{filename}}'
+{{/data}}
+
+const constructors = Object.freeze({
+{{#enum}}
+{{#data}}
+  [{{enumName}}.{{key}}]: {{className}},
+{{/data}}
+{{/enum}}
+{{^enum}}
+{{#data}}
+  {{id}}: {{className}},
+{{/data}}
+{{/enum}}
+})
+
+export default class {{typeName}}Factory {
+  static create(id, ...args) {
+    return new constructors[id](...args)
+  }
+}

@@ -32,8 +32,9 @@ create
   .alias('t')
   .argument('<name>', 'name of the new type in kebab case')
   .option('--no-enum', 'removes the enum')
-  .option('--no-index', 'removes the index')
-  .option('--no-database', 'removes the database')
+  .option('-i, --index', 'maintains an index')
+  .option('-db, --database', 'maintains a database')
+  .option('-f, --factory', 'maintains a factory')
   .option('-p, --plural <word>', 'the plural word for this type')
   .action(type.create)
 create
