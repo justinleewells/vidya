@@ -1,6 +1,7 @@
 import { program } from 'commander'
 
 import data from './lib/commands/data.js'
+import enu from './lib/commands/enum.js' // enum is a reserved word :(
 import gameObject from './lib/commands/game-object.js'
 import global from './lib/commands/global.js'
 import plugin from './lib/commands/plugin.js'
@@ -30,9 +31,9 @@ create
   .command('type')
   .alias('t')
   .argument('<name>', 'name of the new type in kebab case')
-  .option('-e, --enum', 'maintain an enum for this type', true)
-  .option('-i, --index', 'maintain an index for this type', true)
-  .option('-db, --database', 'maintain a database for this type', true)
+  .option('--no-enum', 'removes the enum')
+  .option('--no-index', 'removes the index')
+  .option('--no-database', 'removes the database')
   .option('-p, --plural <word>', 'the plural word for this type')
   .action(type.create)
 create
@@ -55,6 +56,11 @@ create
   .argument('<type>', 'either scene or global')
   .argument('<name>', 'the name of the plugin')
   .action(plugin.create)
+create
+  .command('enum')
+  .alias('e')
+  .argument('<name>', 'the name of the enum')
+  .action(enu.create)
 
 // Sync
 program
