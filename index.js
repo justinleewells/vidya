@@ -1,12 +1,13 @@
 import { program } from 'commander'
 
+import bootstrap from './lib/commands/bootstrap.js'
 import data from './lib/commands/data.js'
 import enu from './lib/commands/enum.js' // enum is a reserved word :(
 import gameObject from './lib/commands/game-object.js'
 import global from './lib/commands/global.js'
 import plugin from './lib/commands/plugin.js'
-import bootstrap from './lib/commands/bootstrap.js'
 import scene from './lib/commands/scene.js'
+import singleton from './lib/commands/singleton.js'
 import sync from './lib/commands/sync.js'
 import type from './lib/commands/type.js'
 
@@ -62,6 +63,13 @@ create
   .alias('e')
   .argument('<name>', 'the name of the enum')
   .action(enu.create)
+create
+  .command('singleton')
+  .argument(
+    '<name>',
+    'the name of the class for which a singleton will be created'
+  )
+  .action(singleton.create)
 
 // Sync
 program
