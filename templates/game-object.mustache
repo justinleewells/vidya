@@ -6,8 +6,8 @@ class {{className}} extends Phaser.GameObjects.GameObject {
   }
 }
 
-function create{{className}} () {
-  const {{objectName}} = new {{className}}(this.scene)
+function create{{className}} (args) {
+  const {{objectName}} = new {{className}}(this.scene, args)
   this.displayList.add({{objectName}})
   this.updateList.add({{objectName}})
   return {{objectName}}
