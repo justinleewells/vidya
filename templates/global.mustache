@@ -3,4 +3,8 @@ let global = null
 export default class Global{{className}} {
   static get() { return global }
   static set(value) { global = value }
+  static destroy() {
+    global.destroy?.()
+    global = null
+  }
 }
