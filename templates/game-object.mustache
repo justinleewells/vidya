@@ -4,6 +4,10 @@ class {{className}} extends Phaser.GameObjects.GameObject {
   constructor(scene) {
     super(scene, '{{{name}}}')
   }
+  destroy() {
+    super.destroy()
+  }
+  preUpdate() {}
 }
 
 function create{{className}} (args) {
