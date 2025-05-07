@@ -4,6 +4,13 @@ class {{pluginName}} extends Plugins.ScenePlugin {
   constructor(scene, pluginManager) {
     super(scene, pluginManager)
   }
+  // Lifecycle
+  boot() {
+    this.systems.events.on('destroy', this.destroy, this)
+  }
+  destroy() {
+    super.destroy()
+  }
 }
 
 const config = {
